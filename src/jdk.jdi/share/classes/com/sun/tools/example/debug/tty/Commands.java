@@ -39,6 +39,7 @@ import com.sun.jdi.connect.Connector;
 import com.sun.jdi.request.*;
 import com.sun.tools.example.debug.expr.ExpressionParser;
 import com.sun.tools.example.debug.expr.ParseException;
+import org.apache.commons.lang3.StringUtils;
 
 import java.text.*;
 import java.util.*;
@@ -211,7 +212,7 @@ class Commands {
                     MessageOutput.println();
 
                     boolean requiredArgument = aa.mustSpecify();
-                    if (aa.value() == null || aa.value().isEmpty()) {
+                    if (StringUtils.isEmpty(aa.value())) {
                         //no current value and no default.
                         MessageOutput.println(requiredArgument ?
                                               "Connector required argument nodefault" :
