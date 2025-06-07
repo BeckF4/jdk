@@ -211,7 +211,7 @@ class Commands {
                     MessageOutput.println();
 
                     boolean requiredArgument = aa.mustSpecify();
-                    if (aa.value() == null || aa.value() == "") {
+                    if (aa.value() == null || aa.value().isEmpty()) {
                         //no current value and no default.
                         MessageOutput.println(requiredArgument ?
                                               "Connector required argument nodefault" :
